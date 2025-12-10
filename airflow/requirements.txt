@@ -1,0 +1,11 @@
+# HTTP client
+requests>=2.32,<3.0
+
+# Modern Kafka client (recommended)
+confluent-kafka==2.1.0
+
+
+# Airflow providers for your stack
+apache-airflow-providers-apache-spark
+apache-airflow-providers-apache-kafka
+apache-airflow-providers-apache-cassandra
