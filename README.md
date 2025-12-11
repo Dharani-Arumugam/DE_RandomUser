@@ -82,4 +82,18 @@ DE_RandomUser/
 - PostgreSQL
 - Docker
 
- 
+ ### Query to run spark_stream.py
+```
+ docker exec -it spark-master /opt/spark/bin/spark-submit \
+  --master spark://spark-master:7077 \
+  --jars "/opt/spark-extra-jars/*" \
+  /opt/app/spark_stream.py
+
+```
+
+### Cassandra db check:
+
+```
+cqlsh localhost 9042 -u cassandra -p cassandra
+
+```
