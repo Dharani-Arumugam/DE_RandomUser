@@ -4,7 +4,6 @@
 - [Introduction](#introduction)
 - [System Architecture](#system-architecture)
 - [Technologies](#technologies)
-- [Getting Started](#getting-started)
 
 ## Introduction
 
@@ -24,34 +23,38 @@ The project is designed with the following components:
 - **Cassandra**: Where the processed data will be stored.
 ## Project Structure 
 
+~~~
 DE_RandomUser/
 │
 ├── airflow/
 │   ├── dags/
 │   │   └── kafka_stream.py
-│   │── logs/
+│   │
+│   ├── logs/                     # Airflow logs generated automatically
 │   │
 │   ├── script/
-│   │   └── entrypoint.sh
+│   │   └── entrypoint.sh         # Custom Airflow startup script
 │   │
-│   ├── requirements.txt
-│   └── airflow.cfg        
+│   ├── requirements.txt          # Python deps for Airflow
+│   └── airflow.cfg               # Airflow config override
 │
 ├── spark/
 │   ├── app/
-│   │   └── spark_stream.py
+│   │   └── spark_stream.py       # Spark Structured Streaming app
 │   │
 │   ├── conf/
-│   │   └── spark_env.sh
-|   |
-│   │── extra-jars/
-│   │   └── jars**
-│   |
-│   └── Dockerfile
+│   │   └── spark_env.sh          # Spark environment variables
+│   │
+│   ├── extra-jars/               # Kafka + Cassandra connectors
+│   │   └── jars/                 # (Place your .jar files here)
+│   │
+│   └── Dockerfile                # Spark custom image
 │
-├── docker-compose.yml
-└── README.md
+├── docker-compose.yml            # Orchestrates Airflow + Kafka + Spark
+│
+└── README.md                     # Project description & setup
 
+~~~
 ## Technologies
 
  - airflow 3.1.3
