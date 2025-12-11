@@ -26,7 +26,7 @@ The project is designed with the following components:
 
 DE_RandomUser/
 │
-├── airflow/                      # Airflow project folder
+├── airflow/
 │   ├── dags/
 │   │   └── kafka_stream.py
 │   │── logs/
@@ -37,7 +37,7 @@ DE_RandomUser/
 │   ├── requirements.txt
 │   └── airflow.cfg        
 │
-├── spark/                        # Spark jobs folder
+├── spark/
 │   ├── app/
 │   │   └── spark_stream.py
 │   │
