@@ -16,20 +16,57 @@ This project serves as a comprehensive guide to building an end-to-end data engi
 
 The project is designed with the following components:
 
-- **Data Source**: We use `randomuser.me` API to generate random user data for our pipeline.
-- **Apache Airflow**: Responsible for orchestrating the pipeline and storing fetched data in a PostgreSQL database.
-- **Apache Kafka and Zookeeper**: Used for streaming data from PostgreSQL to the processing engine.
+- **Data Source**: `randomuser.me` API is used to generate random user data for our pipeline.
+- **Apache Airflow**: Responsible for orchestrating the pipeline of sending the data to Kafka
+- **Apache Kafka and Zookeeper**: Used for streaming data from Kafka broker to the processing engine.
 - **Control Center and Schema Registry**: Helps in monitoring and schema management of our Kafka streams.
 - **Apache Spark**: For data processing with its master and worker nodes.
 - **Cassandra**: Where the processed data will be stored.
+## Project Structure 
 
-## What You'll Learn
+DE_RandomUser/
+│
+├── airflow/                      # Airflow project folder
+│   ├── dags/
+│   │   └── kafka_stream.py
+│   │── logs/
+│   │
+│   ├── script/
+│   │   └── entrypoint.sh
+│   │
+│   ├── requirements.txt
+│   └── airflow.cfg        
+│
+├── spark/                        # Spark jobs folder
+│   ├── app/
+│   │   └── spark_stream.py
+│   │
+│   ├── conf/
+│   │   └── spark_env.sh
+|   |
+│   │── extra-jars/
+│   │   └── jars**
+│   |
+│   └── Dockerfile
+│
+├── docker-compose.yml
+└── README.md
+
+## Technologies
+
+ - airflow 3.1.3
+ - kafka 3.4
+ - spark 3.5.1
+ - cassandra 4.1
+ - docker 
+   
+## Learnings
 
 - Setting up a data pipeline with Apache Airflow
 - Real-time data streaming with Apache Kafka
 - Distributed synchronization with Apache Zookeeper
 - Data processing techniques with Apache Spark
-- Data storage solutions with Cassandra and PostgreSQL
+- Data storage solutions with Cassandra 
 - Containerizing your entire data engineering setup with Docker
 
 ## Technologies
@@ -37,11 +74,9 @@ The project is designed with the following components:
 - Apache Airflow
 - Python
 - Apache Kafka
-- Apache Zookeeper
 - Apache Spark
 - Cassandra
 - PostgreSQL
 - Docker
-
 
  
